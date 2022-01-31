@@ -59,11 +59,14 @@ SUB_FILES+=	nvidia.conf
 SUB_FILES+=	pkg-deinstall pkg-install
 .endif
 SUB_PATCHES=	extra-patch-src-Makefile \
-		extra-patch-src-nv-freebsd.h \
-		extra-patch-src-nvidia_ctl.c \
-		extra-patch-src-nvidia_dev.c \
-		extra-patch-src-nvidia_linux.c \
-		extra-patch-src-nvidia_pci.c
+		extra-patch-src-nv-freebsd.h
+.if ${NVVERSION} < 510
+SUB_PATCHES+= \
+	extra-patch-src-nvidia_ctl.c \
+	extra-patch-src-nvidia_dev.c \
+	extra-patch-src-nvidia_linux.c \
+	extra-patch-src-nvidia_pci.c
+.endif
 .if ${NVVERSION} < 470
 SUB_PATCHES+=	extra-patch-src-nv-misc.h
 .endif
@@ -84,7 +87,7 @@ NVSRC=		.
 NVSRC=		nvidia
 .endif
 
-.if ${NVVERSION} >= 358.009
+.if ${NVVERSION} >= 358.009 && ${NVVERSION} < 510
 # Initialize memory allocations to avoid spurious "lock re-initialization"
 # errors.  A little more detail can be found in bug 201340 starting around
 # comment #50.
