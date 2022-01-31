@@ -110,6 +110,7 @@ LV2_DESC=	LV2 audio filtering
 MFX_DESC=	Intel MediaSDK (aka Quick Sync Video)
 MYSOFA_DESC=	SOFAlizer binaural filter
 NONFREE_DESC=	Allow use of nonfree code
+NVENC_DESC=     Encoding via NVENC
 OPENMPT_DESC=	Decoding tracked files via libopenmpt
 OPENH264_DESC=	H.264 video codec support via OpenH264
 POCKETSPHINX_DESC=	Automatic Speech Recognition via PocketSphinx
@@ -347,7 +348,9 @@ MODPLUG_CONFIGURE_ENABLE=	libmodplug
 MYSOFA_LIB_DEPENDS=	libmysofa.so:audio/libmysofa
 MYSOFA_CONFIGURE_ENABLE=	libmysofa
 
+# NVENC
 NVENC_BUILD_DEPENDS=	${LOCALBASE}/include/ffnvcodec/nvEncodeAPI.h:devel/nv-codec-headers
+NVENC_CONFIGURE_ENABLE=nvenc
 
 # OpenAL
 OPENAL_LIB_DEPENDS=	libopenal.so:audio/openal-soft
