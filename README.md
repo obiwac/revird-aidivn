@@ -5,7 +5,7 @@ These ports include `x11/nvidia-driver` for an up-to-date version of the beta NV
 
 ## Setup
 
-Newer versions of the NVIDIA driver distributions may not be automatically downloaded, in which case you can manually download `NVIDIA-FreeBSD-x86_64-<driver version>.tar.xz` for `x11/nvidia-driver` (currently, the port uses version [510.39.01](https://download.nvidia.com/XFree86/FreeBSD-x86_64/510.39.01/NVIDIA-FreeBSD-x86_64-510.39.01.tar.xz)), and `NVIDIA-Linux-x86_64-<driver version>.run` for `x11/linux-nvidia-libs` (again, uses version [510.39.01](https://download.nvidia.com/XFree86/Linux-x86_64/510.39.01/NVIDIA-Linux-x86_64-510.39.01.run)).
+Newer versions of the NVIDIA driver distributions may not be automatically downloaded (not sure why honestly), in which case you can manually download `NVIDIA-FreeBSD-x86_64-<driver version>.tar.xz` for `x11/nvidia-driver` (currently, the port uses version [510.39.01](https://download.nvidia.com/XFree86/FreeBSD-x86_64/510.39.01/NVIDIA-FreeBSD-x86_64-510.39.01.tar.xz)), and `NVIDIA-Linux-x86_64-<driver version>.run` for `x11/linux-nvidia-libs` (again, uses version [510.39.01](https://download.nvidia.com/XFree86/Linux-x86_64/510.39.01/NVIDIA-Linux-x86_64-510.39.01.run)).
 These files can be placed inside of `/usr/ports/distfiles/`.
 
 **TODO:** Doesn't the FreeBSD driver already contain the necessary Linux libraries? At least I seem to remember it did last time I checked 510.39.01... Would be nice not to have to install two full distributions of the driver.
